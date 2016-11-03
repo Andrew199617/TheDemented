@@ -48,7 +48,13 @@ public:
 
 protected:
 	
-	/** Fires a projectile. */
+	/** Start Crouching. */
+	void StartCrouch();
+
+	/** Stop Crouching. */
+	void EndCrouch();
+
+	/** Turns on phone flashlight. */
 	void TurnOnPhone();
 
 	/** Handles moving forward/backward */
@@ -82,6 +88,6 @@ public:
 
 private:
 	bool phoneIsOn;
-
+	bool isCrouching;
 };
 

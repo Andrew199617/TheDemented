@@ -1,0 +1,31 @@
+#pragma once
+enum AsciiFormats
+{
+	Empty = 0,
+	HasLeft = 1,
+	HasRight = 2,
+	HasBot = 4,
+	HasTop = 8,
+	LeftRight = HasLeft | HasRight,
+	LeftBot = HasLeft | HasBot,
+	LeftTop = HasLeft | HasTop,
+	TopRight = HasTop | HasRight,
+	TopBot = HasTop | HasBot,
+	RightBot = HasRight | HasBot,
+	TopRightBot = HasTop | HasRight | HasBot,
+	TopLeftBot = HasTop | HasLeft | HasBot,
+	LeftRightTop = HasLeft | HasRight | HasTop,
+	LeftRightBot = HasLeft | HasRight | HasBot,
+	LeftRightBotTop = HasLeft | HasRight | HasBot | HasTop,
+};
+
+//LeftRight = 205,
+//LeftBot = 187,
+//LeftTop = 188,
+//TopRight = 200,
+//TopBot = 186,
+//TopRightBot = 204,
+//TopLeftBot = 185,
+//LeftRightTop = 202,
+//LeftRightBot = 203,
+//LeftRightBotTop = 206,

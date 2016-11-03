@@ -63,6 +63,7 @@ void ATheDementedCharacter::BeginPlay()
 	//FP_Phone->AttachToComponent(Mesh1P, FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
 	FP_Light->SetIntensity(0.0f);
 	phoneIsOn = false;
+	isCrouching = false;
 	// Show or hide the two versions of the gun based on whether or not we're using motion controllers.
 	Mesh1P->SetHiddenInGame(false, true);
 	
@@ -78,6 +79,7 @@ void ATheDementedCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ATheDementedCharacter::StartCrouch);
 
 	PlayerInputComponent->BindAction("TurnOnPhone", IE_Pressed, this, &ATheDementedCharacter::TurnOnPhone);
 
@@ -91,6 +93,24 @@ void ATheDementedCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAxis("TurnRate", this, &ATheDementedCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("LookUpRate", this, &ATheDementedCharacter::LookUpAtRate);
+}
+
+void ATheDementedCharacter::StartCrouch()
+{
+	if (isCrouching)
+	{
+		UnCrouch();
+	}
+	else
+	{
+		Crouch();
+	}
+	isCrouching = !isCrouching;
+}
+
+void ATheDementedCharacter::EndCrouch()
+{
+
 }
 
 void ATheDementedCharacter::TurnOnPhone()
