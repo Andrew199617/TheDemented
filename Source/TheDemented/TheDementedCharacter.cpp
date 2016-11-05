@@ -120,6 +120,11 @@ void ATheDementedCharacter::TurnOnPhone()
 		if (!phoneIsOn)
 		{
 			FP_Light->SetIntensity(10000.f);
+			// try and play the sound if specified
+			if (PhoneSound != NULL)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, PhoneSound, GetActorLocation(), 1.0f, 1.0f, 3.9f);
+			}
 		}
 		else
 		{
@@ -128,11 +133,7 @@ void ATheDementedCharacter::TurnOnPhone()
 		phoneIsOn = !phoneIsOn;
 	}
 
-	// try and play the sound if specified
-	if (PhoneSound != NULL)
-	{
-		UGameplayStatics::PlaySoundAtLocation(this, PhoneSound, GetActorLocation());
-	}
+	
 }
 
 void ATheDementedCharacter::MoveForward(float Value)
