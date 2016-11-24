@@ -35,23 +35,23 @@ AGenertaeMazeActor::AGenertaeMazeActor()
 	string end;
 	scale = 1;
 
-	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObj(TEXT("Blueprint'/Game/MazePieces/DeadEnd.DeadEnd'"));
+	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObj(TEXT("Blueprint'/Game/Meshes/MazePieces/DeadEnd.DeadEnd'"));
 	if (BlueprintObj.Succeeded()) {
 		CEndPiece = (UClass*)BlueprintObj.Object->GeneratedClass;
 	}
-	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObjTopBot(TEXT("Blueprint'/Game/MazePieces/TopBot.TopBot'"));
+	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObjTopBot(TEXT("Blueprint'/Game/Meshes/MazePieces/TopBot.TopBot'"));
 	if (BlueprintObjTopBot.Succeeded()) {
 		CTopBot = (UClass*)BlueprintObjTopBot.Object->GeneratedClass;
 	}
-	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObjCLeftBot(TEXT("Blueprint'/Game/MazePieces/LeftBot.LeftBot'"));
+	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObjCLeftBot(TEXT("Blueprint'/Game/Meshes/MazePieces/LeftBot.LeftBot'"));
 	if (BlueprintObjCLeftBot.Succeeded()) {
 		CLeftBot = (UClass*)BlueprintObjCLeftBot.Object->GeneratedClass;
 	}
-	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObjCLeftTopBot(TEXT("Blueprint'/Game/MazePieces/LeftTopBot.LeftTopBot'"));
+	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObjCLeftTopBot(TEXT("Blueprint'/Game/Meshes/MazePieces/LeftTopBot.LeftTopBot'"));
 	if (BlueprintObjCLeftTopBot.Succeeded()) {
 		CLeftTopBot = (UClass*)BlueprintObjCLeftTopBot.Object->GeneratedClass;
 	}
-	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObjCEveryDirection(TEXT("Blueprint'/Game/MazePieces/EveryDirection.EveryDirection'"));
+	ConstructorHelpers::FObjectFinder<UBlueprint> BlueprintObjCEveryDirection(TEXT("Blueprint'/Game/Meshes/MazePieces/EveryDirection.EveryDirection'"));
 	if (BlueprintObjCEveryDirection.Succeeded()) {
 		CEveryDirection = (UClass*)BlueprintObjCEveryDirection.Object->GeneratedClass;
 	}
